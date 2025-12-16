@@ -19,7 +19,7 @@ async function createTransaction(req, res) {
         if (statut !== "EN COURS" && statut !== "ECHOUEE" && statut !== "SUCCES") {
             return res.status(400).json({ 
                 success : false,
-                message: 'Le statut doit soit succes ou echouee ou en cours' 
+                message: 'Le statut doit soit succes ou echouee ou en cours (en majuscule)' 
             });
         }
         const { data, error } = await transactionModel.createTransaction({ montant, statut, date });
