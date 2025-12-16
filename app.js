@@ -16,7 +16,7 @@ app.get("/",(req,res)=>{
     res.json({
         succes: true,
         message: "L'API est fonctionnel",
-        date : Date.now()
+        date : Date.toString()
     })
 })
 

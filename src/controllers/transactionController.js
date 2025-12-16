@@ -48,14 +48,14 @@ async function getTransactions(req, res) {
         const { data, error } = await transactionModel.getTransactions();
         if(error) return res.status(400).json({ message : "Une erreur s'est produite lors de la recuperation des transactions" });
         res.json({
-            succes: true,
+            success: true,
             message : "Liste des transactions",
             data : data
         })
     } catch (error) {
         console.log(error);
         return res.status(500).json({ 
-            succes : false,
+            success : false,
             message : "Une erreur interne au serveur s'est produite" 
         });
     }
